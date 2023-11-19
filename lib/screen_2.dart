@@ -72,7 +72,8 @@ class Screen2 extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => Screen4()),
                 );
               },
-              child: Text("Login", style: TextStyle(fontSize: 18)),
+              child:
+                  Text("Login", style: TextStyle(fontSize: 18, color: white)),
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(purple),
                 padding: MaterialStateProperty.all(

@@ -486,7 +486,6 @@ class Screen4 extends StatelessWidget {
                     child: Column(
                       children: [
                         vspace,
-                        vspace,
                         ImageWithTextContainer(
                             imageUrl:
                                 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcL3RbVJoCfr3dqsgp7c116xoeG5OTEksZZT5yY_-PIma28miRHlqE7Rv4SEosyeH4BJU&usqp=CAU',

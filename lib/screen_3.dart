@@ -15,7 +15,15 @@ class Screen3 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Hello! Registered to get started",
+              "Hello! Registered to",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w600,
+                color: black,
+              ),
+            ),
+            Text(
+              "get started",
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w600,
@@ -96,7 +104,8 @@ class Screen3 extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => Screen4()),
                 );
               },
-              child: Text("Register", style: TextStyle(fontSize: 18)),
+              child: Text("Register",
+                  style: TextStyle(fontSize: 18, color: white)),
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(purple),
                 padding: MaterialStateProperty.all(

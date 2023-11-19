@@ -25,7 +25,11 @@ class MyCard extends StatelessWidget {
   String image;
   String title;
 
-  MyCard({required this.price, required this.image, required this.title});
+  MyCard(
+      {super.key,
+      required this.price,
+      required this.image,
+      required this.title});
 
   @override
   Widget build(BuildContext context) {
