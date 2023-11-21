@@ -36,8 +36,15 @@ class MyCard extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) =>
-                DetailPage(image: image, title: title, price: price)));
+            builder: (context) => DetailsPage(
+                image:
+                    'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg',
+                title: "product 1",
+                price: "price: Rs 2000",
+                description:
+                    "An image is a visual representation of something. An image can be a two-dimensional (2D) representation, such as a drawing, painting, or photograph, or a three-dimensional (3D) object, such as a carving or sculpture. An image may be displayed throu")
+            //DetailPage(image: image, title: title, price: price)
+            ));
       },
       child: Card(
         shape: RoundedRectangleBorder(
