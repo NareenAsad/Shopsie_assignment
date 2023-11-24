@@ -35,16 +35,16 @@ class MyCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => DetailsPage(
-                image:
-                    'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg',
-                title: "product 1",
-                price: "price: Rs 2000",
-                description:
-                    "An image is a visual representation of something. An image can be a two-dimensional (2D) representation, such as a drawing, painting, or photograph, or a three-dimensional (3D) object, such as a carving or sculpture. An image may be displayed throu")
-            //DetailPage(image: image, title: title, price: price)
-            ));
+        Navigator.of(context).push(
+          MaterialPageRoute(
+              builder: (context) => DetailsPage(
+                  image:
+                      'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg',
+                  title: "product 1",
+                  price: "price: Rs 2000",
+                  description:
+                      "An image is a visual representation of something. An image can be a two-dimensional (2D) representation, such as a drawing, painting, or photograph, or a three-dimensional (3D) object, such as a carving or sculpture. An image may be displayed throu")),
+        );
       },
       child: Card(
         shape: RoundedRectangleBorder(
@@ -168,6 +168,37 @@ class ImageWithTextContainer extends StatelessWidget {
               fontSize: 10,
               color: grey,
             ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class GridItem extends StatelessWidget {
+  int index;
+  String image;
+  String title;
+
+  GridItem({required this.index, required this.image, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: lgrey,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.network(
+            image,
+            height: 120,
+            width: 120,
+            fit: BoxFit.cover,
+          ),
+          SizedBox(height: 10),
+          Text(
+            title,
+            style: TextStyle(color: black),
           ),
         ],
       ),

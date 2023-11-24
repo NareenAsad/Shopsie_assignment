@@ -1,53 +1,6 @@
 import 'package:flutter/material.dart';
-
-// ignore: must_be_immutable
-// class DetailPage extends StatelessWidget {
-//   String image;
-//   String title;
-//   String price;
-//   DetailPage(
-//       {super.key,
-//       required this.image,
-//       required this.title,
-//       required this.price});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Center(
-//         child: Row(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             Image.network(
-//               image,
-//               height: 500,
-//               width: 500,
-//             ),
-//             SizedBox(
-//               width: 20,
-//             ),
-//             Column(
-//               mainAxisAlignment: MainAxisAlignment.center,
-//               children: [
-//                 Text(
-//                   title,
-//                   style: TextStyle(fontSize: 40),
-//                 ),
-//                 SizedBox(
-//                   height: 20,
-//                 ),
-//                 Text(
-//                   price,
-//                   style: TextStyle(fontSize: 20),
-//                 )
-//               ],
-//             )
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
+import 'package:flutter_application_4/screen_4.dart';
+import 'package:flutter_application_4/utils.dart';
 
 // ignore: must_be_immutable
 class DetailsPage extends StatelessWidget {
@@ -67,14 +20,27 @@ class DetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => Screen4(),
+              ),
+            );
+          },
+          color: purple,
+        ),
         centerTitle: true,
         title: Text(
           "Shopsie",
           style: TextStyle(
-              color: const Color.fromARGB(255, 79, 33, 243),
-              fontSize: 20,
-              fontStyle: FontStyle.italic),
+            fontSize: 42,
+            fontFamily: 'EduTASBeginner',
+            fontWeight: FontWeight.w500,
+            color: purple,
+            height: 1,
+          ),
         ),
       ),
       body: Column(
@@ -96,9 +62,7 @@ class DetailsPage extends StatelessWidget {
                 Text(
                   title,
                   style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 30,
-                      fontWeight: FontWeight.w500),
+                      color: black, fontSize: 30, fontWeight: FontWeight.w500),
                 ),
                 SizedBox(
                   height: 8,
@@ -116,9 +80,7 @@ class DetailsPage extends StatelessWidget {
                 Text(
                   "Product Details",
                   style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
+                      color: black, fontSize: 16, fontWeight: FontWeight.w500),
                 ),
                 SizedBox(
                   height: 15,
@@ -126,9 +88,25 @@ class DetailsPage extends StatelessWidget {
                 Text(
                   description,
                   style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400),
+                      color: black, fontSize: 16, fontWeight: FontWeight.w400),
+                ),
+                SizedBox(height: 80),
+                Center(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Add To Cart",
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: white),
+                    ),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(purple),
+                      padding: MaterialStateProperty.all(
+                          EdgeInsets.symmetric(horizontal: 100, vertical: 17)),
+                    ),
+                  ),
                 ),
               ],
             ),
