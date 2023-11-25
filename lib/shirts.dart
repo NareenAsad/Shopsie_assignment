@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/data.dart';
-import 'package:flutter_application_4/screen_4.dart';
+import 'package:flutter_application_4/details.dart';
 import 'package:flutter_application_4/utils.dart';
 
 class Shirts extends StatelessWidget {
@@ -13,11 +13,7 @@ class Shirts extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => Screen4(),
-              ),
-            );
+            Navigator.pop(context);
           },
           color: purple,
         ),
@@ -40,47 +36,62 @@ class Shirts extends StatelessWidget {
         ),
         itemCount: shirts.length,
         itemBuilder: (context, index) {
-          return Card(
-            elevation: 4,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      image: DecorationImage(
-                        image: AssetImage(shirts[index].image),
-                        fit: BoxFit.fill,
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsPage(
+                      image: shirts[index].image,
+                      title: shirts[index].title,
+                      price: shirts[index].price,
+                      description:
+                          'These semi-fitted women vineyard vines shorts feature a Hollywood waistband, belt loops, double hooks and front bar closure at the front zipper, slash side pockets, a hidden coin pocket, and back pockets with buttons. '),
+                ),
+              );
+            },
+            child: Card(
+              elevation: 4,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        image: DecorationImage(
+                          image: AssetImage(shirts[index].image),
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                vspace,
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
-                  child: Text(
-                    shirts[index].title,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12,
+                  vspace,
+                  Padding(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                    child: Text(
+                      shirts[index].title,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12,
+                      ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Text(
-                    shirts[index].price,
-                    style: TextStyle(
-                      fontSize: 11,
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Text(
+                      shirts[index].price,
+                      style: TextStyle(
+                        fontSize: 11,
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           );
         },

@@ -25,25 +25,28 @@ class MyCard extends StatelessWidget {
   String image;
   String title;
 
-  MyCard(
-      {super.key,
-      required this.price,
-      required this.image,
-      required this.title});
+  MyCard({
+    super.key,
+    required this.price,
+    required this.image,
+    required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {
-        Navigator.of(context).push(
+        Navigator.push(
+          context,
           MaterialPageRoute(
-              builder: (context) => DetailsPage(
-                  image:
-                      'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg',
-                  title: "product 1",
-                  price: "price: Rs 2000",
-                  description:
-                      "An image is a visual representation of something. An image can be a two-dimensional (2D) representation, such as a drawing, painting, or photograph, or a three-dimensional (3D) object, such as a carving or sculpture. An image may be displayed throu")),
+            builder: (context) => DetailsPage(
+              image: image,
+              title: title,
+              price: price,
+              description:
+                  'Put your hands in the air for the sleeveless version of our most popular polo. It a soft cotton-blend pique knit that sure to become a wardrobe staple just like its sister.',
+            ),
+          ),
         );
       },
       child: Card(
@@ -175,6 +178,7 @@ class ImageWithTextContainer extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class GridItem extends StatelessWidget {
   int index;
   String image;

@@ -209,13 +209,11 @@ class Screen4 extends StatelessWidget {
             vspace,
             vspace,
             Center(
-              child: ClipOval(
-                child: Image.network(
-                  'https://lagence.com/cdn/shop/products/036_10463.jpg?v=1689718771&width=480',
-                  height: 300,
-                  width: 300,
-                  fit: BoxFit.fill,
-                ),
+              child: Image.network(
+                'https://lagence.com/cdn/shop/products/036_10463.jpg?v=1689718771&width=480',
+                height: 300,
+                width: 300,
+                fit: BoxFit.cover,
               ),
             ),
             vspace,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/data.dart';
-import 'package:flutter_application_4/screen_4.dart';
 import 'package:flutter_application_4/utils.dart';
 
 class Categories extends StatelessWidget {
@@ -14,11 +13,7 @@ class Categories extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => Screen4(),
-              ),
-            );
+            Navigator.pop(context);
           },
           color: purple,
         ),
@@ -31,8 +26,14 @@ class Categories extends StatelessWidget {
             color: purple,
           ),
         ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.menu),
+            color: purple,
+          ),
+        ],
       ),
-      endDrawer: Drawer(),
       body: Center(
         child: GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -43,48 +44,38 @@ class Categories extends StatelessWidget {
           ),
           itemCount: categories.length,
           itemBuilder: (context, index) {
-            return InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Screen4(),
+            return Card(
+              elevation: 4,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        image: DecorationImage(
+                          image: NetworkImage(categories[index].image),
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
                   ),
-                );
-              },
-              child: Card(
-                elevation: 4,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          image: DecorationImage(
-                            image: NetworkImage(categories[index].image),
-                            fit: BoxFit.contain,
-                          ),
-                        ),
+                  vspace,
+                  Padding(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                    child: Text(
+                      categories[index].title,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12,
                       ),
                     ),
-                    vspace,
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 4, horizontal: 8),
-                      child: Text(
-                        categories[index].title,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             );
           },
