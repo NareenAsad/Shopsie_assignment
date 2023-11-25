@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_4/cate1.dart';
 import 'package:flutter_application_4/data.dart';
 import 'package:flutter_application_4/utils.dart';
 
-class Categories extends StatelessWidget {
-  const Categories({super.key});
+class Categories2 extends StatelessWidget {
+  const Categories2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,10 @@ class Categories extends StatelessWidget {
         ),
         actions: <Widget>[
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => Categories1()));
+            },
             icon: Icon(Icons.menu),
             color: purple,
           ),
@@ -70,9 +74,9 @@ class Categories extends StatelessWidget {
                     child: Text(
                       categories[index].title,
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12,
-                      ),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                          color: purple),
                     ),
                   ),
                 ],

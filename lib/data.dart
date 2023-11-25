@@ -16,11 +16,11 @@ List<Category> categories = [
       title: 'Bottoms'),
   Category(
       image:
-          'https://m.media-amazon.com/images/I/610aimbNECL._AC_UL480_FMwebp_QL65_.jpg',
+          'https://m.media-amazon.com/images/I/51ty2Kzyv1L._AC_SR480,480_.jpg',
       title: 'Shoes'),
   Category(
       image:
-          'https://m.media-amazon.com/images/I/517r6u1zoGL._AC_UL480_FMwebp_QL65_.jpg',
+          'https://m.media-amazon.com/images/I/61b8Vy3KlSL._AC_UL480_FMwebp_QL65_.jpg',
       title: 'Heels'),
   Category(
       image:

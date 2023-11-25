@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/accessories.dart';
 import 'package:flutter_application_4/bottoms.dart';
-import 'package:flutter_application_4/categories.dart';
+import 'package:flutter_application_4/cate1.dart';
 import 'package:flutter_application_4/common_widgets.dart';
 import 'package:flutter_application_4/heels.dart';
 import 'package:flutter_application_4/screen_2.dart';
@@ -128,7 +128,7 @@ class Screen4 extends StatelessWidget {
                     title: Text('All categories'),
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => Categories()));
+                          builder: (context) => Categories1()));
                     },
                   ),
                   ListTile(
